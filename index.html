@@ -1,7 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galeria de Imagens</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .gallery img {
+      max-width: 200px;
+      height: auto;
+      border: 2px solid #ddd;
+      background: white;
+      padding: 4px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Galeria de Imagens</h1>
+  <div class="gallery" id="gallery"></div>
 
-<script>
-  const imagens = [
-    "AMARELO.jpg",
+  <script>
+    // Lista de arquivos .jpg no mesmo diretório
+    const imagens = [
+      "AMARELO.jpg",
 "AMARELO_OURO.jpg",
 "AZUL.jpg",
 "AZUL_CELESTE.jpg",
@@ -97,13 +133,20 @@
 "sisal.jpg",
 "strong.jpg",
 "verde_Murgo.jpg"
-  ];
+      // Adicione aqui mais nomes de imagens conforme forem colocando no repositório
+    ];
 
-  const gallery = document.getElementById("gallery");
-  imagens.forEach(nome => {
-    const img = document.createElement("img");
-    img.src = nome;
-    gallery.appendChild(img);
-  });
-</script>
+    const gallery = document.getElementById("gallery");
+
+    imagens.forEach(nome => {
+      const img = document.createElement("img");
+      img.src = nome;
+      img.alt = nome;
+      gallery.appendChild(img);
+    });
+  </script>
+</body>
+</html>
+
+
 
