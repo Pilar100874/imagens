@@ -1,0 +1,12 @@
+<script>
+  fetch("imagens.json")
+    .then(resp => resp.json())
+    .then(lista => {
+      const gallery = document.getElementById("gallery");
+      lista.forEach(nome => {
+        const img = document.createElement("img");
+        img.src = nome;
+        gallery.appendChild(img);
+      });
+    });
+</script>
